@@ -1,0 +1,148 @@
+/*
+========================================
+Main Footer Structure (Glassmorphic)
+========================================
+*/
+.footer {
+    background: var(--color-glass-bg);
+    border-top: 1px solid var(--color-glass-border);
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+    
+    /* Efek Frosted Glass */
+    backdrop-filter: blur(var(--blur-value));
+    -webkit-backdrop-filter: blur(var(--blur-value));
+    
+    color: var(--color-text);
+    padding: 3rem 0 1.5rem 0;
+    margin-top: auto; /* Memastikan footer terdorong ke bawah jika konten halaman sedikit */
+}
+
+.footer__container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--navbar-padding);
+    
+    /* Tampilan Mobile Default: Berjejer vertikal kebawah */
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.footer__col {
+    flex: 1;
+}
+
+.footer__title {
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 1.25rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Garis dekoratif kecil di bawah judul kolom */
+.footer__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+}
+
+.footer__text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.85;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.footer__links,
+.footer__info {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer__links li,
+.footer__info li {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.footer__link {
+    color: inherit;
+    transition: all var(--transition-speed) ease;
+    opacity: 0.8;
+    display: inline-block;
+}
+
+/* Efek interaksi hover pada link */
+.footer__link:hover,
+.footer__link:focus {
+    opacity: 1;
+    transform: translateX(6px); /* Bergeser sedikit ke kanan saat di-hover */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.footer__info li {
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.footer__icon {
+    font-size: 1.1rem;
+}
+
+/* Bar Hak Cipta di bawah */
+.footer__bottom {
+    max-width: var(--container-width);
+    margin: 2.5rem auto 0 auto;
+    padding: 1.5rem var(--navbar-padding) 0 var(--navbar-padding);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.7;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.social-icons{
+    margin-top: 50px;
+}
+.social-icons a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    color: #2B4141;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+.social-icons a:hover{
+    background: #2B4141;
+    color: #0EB928  ;
+    transition: all 0.5s ease;
+}
+
+/*
+========================================
+Responsive Styles (Tablet & Desktop)
+========================================
+*/
+@media (min-width: 768px) {
+    .footer__container {
+        /* Berubah menjadi horizontal berjejer ke samping di layar lebar */
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 3rem;
+    }
+}
