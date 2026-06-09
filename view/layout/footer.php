@@ -20,6 +20,10 @@
 
         <div class="footer__col">
             <h3 class="footer__title">Kontak Kami</h3>
+            <ul class="footer__links">
+                <li><a href="../pages/contact.php" class="footer__link">Contact us</a></li>
+                <li>email: <a href="mailto:masjidhamzahbinabdulM@gmail.com" class="footer__link">masjidhamzahbinabdulM@gmail.com</a></li>
+            </ul>
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>

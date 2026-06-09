@@ -25,10 +25,12 @@
             
             <nav id="navbarMenu" class="navbar__menu" role="navigation" aria-labelledby="navbarToggle">
                 <ul class="navbar__list">
-                    <li class="navbar__item"><a href="#" class="navbar__link navbar__link--active">Home</a></li>
-                    <li class="navbar__item"><a href="#" class="navbar__link">Features</a></li>
-                    <li class="navbar__item"><a href="#" class="navbar__link">Gallery</a></li>
-                    <li class="navbar__item"><a href="#" class="navbar__link">Sign In</a></li>
+                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/index.php" class="navbar__link navbar__link--active">Home</a></li>
+                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/view/pages/jadwal.php" class="navbar__link">Jadwal</a></li>
+                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/view/pages/kegiatan.php" class="navbar__link">Kegiatan</a></li>
+                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/view/pages/keuangan.php" class="navbar__link">Keuangan</a></li>
+                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/view/pages/amal_sedekah.php" class="navbar__link">amal online</a></li>
+                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/auth/login.php" class="navbar__link">Sign In</a></li>
                 </ul>
             </nav>
         </div>
