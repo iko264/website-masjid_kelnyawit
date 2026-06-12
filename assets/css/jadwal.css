@@ -1,0 +1,55 @@
+.table-container-jadwal {
+    width: 100%;
+    max-width: 1200px;
+    margin: 2em auto 4em auto; 
+    overflow-x: auto;
+}
+
+.jadwal-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.jadwal-table th, 
+.jadwal-table td {
+    padding: 1.2em;
+    color: var(--color-text); /* Menggunakan variabel putih Anda */
+}
+
+.jadwal-table th {
+    background: rgba(0, 0, 0, 0.2); /* Sedikit lebih gelap untuk header */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+.jadwal-table td {
+    font-size: 1.1em;
+    font-weight: 500;
+    position: relative; 
+    padding-right: 2em; 
+}
+
+.btn-edit-inline {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-glass-border); /* Warna sedikit redup/kaca */
+    font-size: 0.9em;
+    opacity: 0.5;
+    transition: all 0.2s ease;
+}
+
+.btn-edit-inline:hover {
+    color: var(--gold-light); /* Berubah emas saat diarahkan mouse */
+    opacity: 1;
+}
+

@@ -1,14 +1,8 @@
-/*
-========================================
-Login Form (Glassmorphic Gold & Olive Theme)
-========================================
-*/
 
-/* 1. Definisi Variabel Warna */
 :root {
-  --gold-dark: #b8860b;   /* Emas gelap klasik */
-  --gold-light: #ffd700;  /* Emas terang */
-  --bg-olive: #2b4141;    /* Hijau Zaitun dari tema sebelumnya */
+  --gold-dark: #b8860b;   
+  --gold-light: #ffd700;  
+  --bg-olive: #2b4141;    
   --bg-olive-dark: #044739; 
   --gray-text: #555555;
   --input-bg: #f5f6f8;

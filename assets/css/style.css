@@ -42,18 +42,23 @@
             font-size: 1rem;
             line-height: 1.5;
             color: var(--color-text);
-            
-            /* A vibrant background is essential to see the glassmorphism effect. */
+    
             background-image: linear-gradient(135deg, #2B4141 0%, #0EB928 100%);
-            background-attachment: fixed; /* Ensures the gradient doesn't scroll with content */
+            background-attachment: fixed; 
+    
+            /* === TAMBAHKAN 3 BARIS INI === */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         
         /* Placeholder content to demonstrate scrolling */
         .content {
             padding: calc(var(--navbar-height) + 2rem) var(--navbar-padding);
-            height: 200vh;
+            flex: 1; /* Memastikan konten utama mengambil ruang yang tersisa */ 
             color: white; /* Make text readable on gradient */
             text-align: center;
+            padding-bottom: 50px;
         }
         
         ul { list-style: none; margin: 0; padding: 0; }
@@ -221,3 +226,339 @@
                 background-color: var(--color-link-highlight);
             }
         }
+
+
+        /* ========================================
+   Gaya Halaman Edit Jadwal (Glassmorphism)
+   ======================================== */
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+    padding: 1em; 
+    padding-top: calc(var(--navbar-height, 80px) + 2rem);
+}
+
+.glass-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 2.5em;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.form-header h2 {
+    color: #ffffff;
+    margin-bottom: 0.2em;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.form-header p {
+    color: var(--gold-light, #ffd700); /* Warna emas */
+    font-size: 0.9em;
+    margin-bottom: 2em;
+}
+
+/* Kolom Input */
+.input-group {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5em;
+    transition: box-shadow 0.3s ease;
+}
+
+.input-group:focus-within {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Nyala emas saat diketik */
+}
+
+.input-icon {
+    padding: 1em;
+    background: #e9ecef;
+    color: var(--gold-dark, #b8860b);
+}
+
+.form-input {
+    flex: 1;
+    border: none;
+    padding: 1em;
+    outline: none;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Tombol Simpan Emas */
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    background: linear-gradient(to right, #b8860b, #ffd700);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 1.5em;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(184, 134, 11, 0.6);
+}
+
+/* Link Kembali */
+.btn-back {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.2s ease;
+}
+
+.btn-back:hover {
+    color: #ffffff;
+}   
+.btn-tambah {
+    display: inline-block;
+    padding: 0.6em 1.4em;
+    background: linear-gradient(to right, #b8860b, #ffd700);
+    border-radius: 6px;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+    transition: all 0.2s ease;
+}
+
+.btn-tambah:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(184, 134, 11, 0.5);
+    filter: brightness(1.1);
+}
+
+/* Style Ikon Hapus Dinamis */
+.btn-delete-inline {
+    color: rgba(255, 71, 87, 0.6); /* Merah lembut transparan khas tema kaca */
+    font-size: 0.95em;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-delete-inline:hover {
+    color: #ff4757; /* Merah terang solid saat kursor mendekat */
+    transform: scale(1.15); /* Sedikit membesar memberi efek feedback */
+}
+
+/* ========================================
+   Gaya Halaman Kegiatan (Glassmorphism Cards)
+   ======================================== */
+.kegiatan-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.kegiatan-card {
+    background: var(--color-glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kegiatan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.kegiatan-img-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.kegiatan-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar tidak gepeng */
+    transition: transform 0.5s ease;
+}
+
+.kegiatan-card:hover .kegiatan-img {
+    transform: scale(1.05); /* Gambar sedikit membesar saat disentuh */
+}
+
+.kegiatan-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.kegiatan-meta {
+    font-size: 0.9rem;
+    color: var(--gold-light, #ffd700);
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.kegiatan-title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.kegiatan-desc {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.kegiatan-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+}
+
+/* Responsif untuk Layar PC/Laptop */
+@media (min-width: 768px) {
+    .kegiatan-card {
+        flex-direction: row; /* Ubah orientasi jadi Kiri-Kanan */
+    }
+    .kegiatan-img-wrapper {
+        width: 40%;
+        height: auto; /* Menyesuaikan dengan tinggi teks */
+    }
+    .kegiatan-content {
+        width: 60%;
+        justify-content: center;
+    }
+}
+
+.hero-section {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        margin: calc(var(--navbar-height) + 2rem) auto 2rem auto;
+        max-width: var(--container-width);
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        margin: 0;
+        background: linear-gradient(to right, #ffffff, #ffd700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .hero-subtitle {
+        font-size: 1.2rem;
+        color: #eee;
+        margin-bottom: 2rem;
+    }
+    .masjid-img-container {
+        width: 100%;
+        max-width: 700px;
+        height: 350px;
+        margin: 0 auto;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 2px solid rgba(255,255,255,0.3);
+    }
+    .masjid-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .home-section {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 16px;
+        padding: 2.5rem;
+        margin: 2rem auto;
+        max-width: var(--container-width);
+        text-align: center;
+    }
+    .home-section h2 {
+        font-size: 1.8rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: #fff;
+    }
+    .btn-selengkapnya {
+        display: inline-block;
+        margin-top: 1.5rem;
+        padding: 0.75rem 2rem;
+        background: linear-gradient(to right, #b8860b, #ffd700);
+        color: #fff !important;
+        font-weight: bold;
+        border-radius: 30px;
+        box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+        transition: all 0.3s ease;
+    }
+    .btn-selengkapnya:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(184, 134, 11, 0.5);
+    }
+    .map-box {
+        background: rgba(255,255,255,0.9);
+        padding: 1rem;
+        border-radius: 12px;
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        color: #333;
+        font-weight: bold;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .finance-mini-grid {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+    }
+    .mini-box {
+        flex: 1;
+        min-width: 180px;
+        padding: 1rem;
+        background: rgba(255,255,255,0.1);
+        border-radius: 8px;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+    .mini-box p { margin: 0; font-size: 0.85rem; color: #ddd; }
+    .mini-box div { font-size: 1.25rem; font-weight: bold; margin-top: 0.3rem; }

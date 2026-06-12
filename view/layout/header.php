@@ -1,3 +1,12 @@
+<?php 
+// Mulai sesi virtual
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+// Mengambil nama file PHP yang sedang dibuka saat ini
+$halaman_aktif = basename($_SERVER['PHP_SELF']); 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +15,7 @@
     <title>Masjid Hamzah</title>
     <link rel="stylesheet" href="/WEBSITE-MASJID_KELNYAWIT/assets/css/style.css">
     <link rel="stylesheet" href="/WEBSITE-MASJID_KELNYAWIT/assets/css/footer.css">
+    <link rel="stylesheet" href="/WEBSITE-MASJID_KELNYAWIT/assets/css/jadwal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -25,12 +35,16 @@
             
             <nav id="navbarMenu" class="navbar__menu" role="navigation" aria-labelledby="navbarToggle">
                 <ul class="navbar__list">
-                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/index.php" class="navbar__link navbar__link--active">Home</a></li>
-                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/view/pages/jadwal.php" class="navbar__link">Jadwal</a></li>
-                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/view/pages/kegiatan.php" class="navbar__link">Kegiatan</a></li>
-                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/view/pages/keuangan.php" class="navbar__link">Keuangan</a></li>
-                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/view/pages/amal_sedekah.php" class="navbar__link">amal online</a></li>
-                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/auth/login.php" class="navbar__link">Sign In</a></li>
+                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/index.php" class="navbar__link <?php echo ($halaman_aktif == 'index.php') ? 'navbar__link--active' : ''; ?>">Home</a></li>
+                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/view/pages/jadwal.php" class="navbar__link <?php echo ($halaman_aktif == 'jadwal.php') ? 'navbar__link--active' : ''; ?>">Jadwal</a></li>
+                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/view/pages/kegiatan.php" class="navbar__link <?php echo ($halaman_aktif == 'kegiatan.php') ? 'navbar__link--active' : ''; ?>">Kegiatan</a></li>
+                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/view/pages/keuangan.php" class="navbar__link <?php echo ($halaman_aktif == 'keuangan.php') ? 'navbar__link--active' : ''; ?>">Keuangan</a></li>
+                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/view/pages/amal_sedekah.php" class="navbar__link <?php echo ($halaman_aktif == 'amal_sedekah.php') ? 'navbar__link--active' : ''; ?>">Amal Online</a></li>
+                    <?php if (isset($_SESSION['is_admin'])): ?>
+                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/models/login.php?action=logout" class="navbar__link " onclick="return confirm('Yakin ingin keluar?');">Logout</a></li>
+                    <?php else: ?>
+                    <li class="navbar__item"><a href="/WEBSITE-MASJID_KELNYAWIT/auth/login.php" class="navbar__link" >Login</a></li>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </div>
