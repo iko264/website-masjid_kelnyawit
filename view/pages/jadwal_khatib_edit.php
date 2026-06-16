@@ -1,10 +1,6 @@
 <?php
-// view/pages/khatib_form.php
-
-// Panggil komponen header
+require_once '../../connector/koneksi.php';
 require_once '../layout/header.php';
-
-// Panggil file model pengolah logika data
 require_once '../../models/jadwal_khatib_proses.php';
 ?>
 

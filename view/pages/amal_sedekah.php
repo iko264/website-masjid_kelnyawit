@@ -1,5 +1,5 @@
 <?php
-// view/pages/sedekah.php
+require_once '../../connector/koneksi.php';
 require_once '../layout/header.php';
 ?>
 
@@ -71,7 +71,7 @@ require_once '../layout/header.php';
         </div>
 
         <div class="qris-box">
-            <img src="/WEBSITE-MASJID_KELNYAWIT/assets/img/qris.png" alt="QRIS Masjid Hamzah" class="qris-img" >
+            <img src="../../assets/img/qris.png" alt="QRIS Masjid Hamzah" class="qris-img" >
             <div style="color: #333; font-weight: 800; margin-top: 0.8rem; font-size: 1.1rem; letter-spacing: 1px;">QRIS JALAN AMAL MASJID</div>
             <div style="color: #777; font-size: 0.75rem; margin-top: 0.2rem;">Mendukung semua dompet digital (Gopay, OVO, Dana, LinkAja, & M-Banking)</div>
         </div>

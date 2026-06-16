@@ -1,10 +1,8 @@
 <?php
+require_once '../../connector/koneksi.php';
 require_once '../layout/header.php';
-
-// Pastikan file ini benar-benar berisi logika POST (proses simpan) yang tadi kita buat
 require_once '../../models/kegiatan.php'; 
 
-// Sesuaikan variabel cadangan dengan yang ada di model
 $is_edit          = isset($_GET['id']) && !empty($_GET['id']);
 $nama_kegiatan    = isset($nama_kegiatan) ? $nama_kegiatan : '';
 $deskripsi        = isset($deskripsi) ? $deskripsi : '';

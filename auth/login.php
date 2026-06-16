@@ -16,10 +16,10 @@ if (isset($_SESSION['is_admin'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Admin</title>
-    <link rel="stylesheet" href="/WEBSITE-MASJID_KELNYAWIT/assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 <body>
-    <form class='login-form' action="/WEBSITE-MASJID_KELNYAWIT/models/login.php" method="POST">
+    <form class='login-form' action="../models/login.php" method="POST">
         <div class="flex-row">
             <label class="lf--label" for="username">
                 <svg x="0px" y="0px" width="12px" height="13px">
@@ -43,6 +43,6 @@ if (isset($_SESSION['is_admin'])) {
         <input class='lf--submit' type='submit' value='LOGIN'>
     </form>
     
-    <a class='lf--forgot' href='/WEBSITE-MASJID_KELNYAWIT/index.php'>Kembali ke Halaman Utama</a> 
+    <a class='lf--forgot' href='../index.php'>Kembali ke Halaman Utama</a> 
 </body>
 </html>

@@ -1,4 +1,5 @@
 <?php
+require_once '../../connector/koneksi.php';
 require_once '../layout/header.php';
 ?>
 <main class="content">

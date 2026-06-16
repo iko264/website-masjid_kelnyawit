@@ -1,5 +1,5 @@
 <?php
-// view/pages/keuangan.php
+require_once '../../connector/koneksi.php';
 require_once '../layout/header.php';
 require_once '../../models/keuangan.php'; 
 
@@ -22,7 +22,6 @@ $data_keuangan     = isset($data_keuangan) ? $data_keuangan : [];
 </style>
 
 <main class="content">
-    <br><br>
     <h1>Laporan Keuangan Masjid</h1>
     <p>Transparansi dana umat Masjid Hamzah.</p>
     

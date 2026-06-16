@@ -1,14 +1,9 @@
 <?php
-// view/pages/kegiatan.php
-
-// 1. Panggil Header
+require_once '../../connector/koneksi.php';
 require_once '../layout/header.php';
-
-// 2. Panggil File Model (Pastikan file ini bernama kegiatan.php di folder models)
 require_once '../../models/kegiatan.php'; 
 ?>
 <main class="content">
-    <br><br>
     <h1>Kegiatan Masjid</h1>
     <p>Dokumentasi dan informasi kegiatan terbaru di Masjid Hamzah.</p>
     

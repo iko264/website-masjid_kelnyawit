@@ -26,4 +26,5 @@ try {
             " . htmlspecialchars($e->getMessage()) . "
          </div>");
 }
-?>
+
+define('BASE_URL', 'http://website-masjid_kelnyawit.test/');

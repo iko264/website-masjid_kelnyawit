@@ -1,16 +1,13 @@
 <?php
+require_once 'connector/koneksi.php';
 require_once 'view/layout/header.php';
 
+require_once 'models/keuangan.php';   
 
-// SAKTI: Langsung panggil model keuangan agar angka kas di beranda tampil secara LIVE
-if (file_exists('/WEBSITE-MASJID_KELNYAWIT/models/keuangan.php')) {
-    require_once '/WEBSITE-MASJID_KELNYAWIT/models/keuangan.php';
-}
-
-// Sabuk pengaman jika data kas di database masih kosong
 $total_pemasukan   = isset($total_pemasukan) ? $total_pemasukan : 0;
 $total_pengeluaran = isset($total_pengeluaran) ? $total_pengeluaran : 0;
 $saldo_akhir       = isset($saldo_akhir) ? $saldo_akhir : 0;
+
 ?>
 
 
@@ -18,10 +15,10 @@ $saldo_akhir       = isset($saldo_akhir) ? $saldo_akhir : 0;
     
     <section class="hero-section">
         <h1 class="hero-title">MASJID HAMZAH</h1>
-        <p class="hero-subtitle">Wadah Pembinaan Iman, Takwa, dan Tempat Ibadah yang Nyaman bagi Jamaah Kelnyawit.</p>
+        <p class="hero-subtitle">Wadah Pembinaan Iman, Takwa, dan Tempat Ibadah yang Nyaman bagi Jamaah mahasiswa fakultas teknik.</p>
         
         <div class="masjid-img-container">
-            <img src="/WEBSITE-MASJID_KELNYAWIT/assets/img/hasmjid.jpg" alt="Gambar Masjid Hamzah" class="masjid-img">
+            <img src="<?php echo BASE_URL; ?>/assets/img/masjid.jpg" alt="Gambar Masjid Hamzah" class="masjid-img">
         </div>
     </section>
 
@@ -30,9 +27,30 @@ $saldo_akhir       = isset($saldo_akhir) ? $saldo_akhir : 0;
         <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto;">
             Pantau waktu sholat lima waktu berjamaah serta jadwal Khatib Jumat secara berkala agar ibadah kita semakin tertata.
         </p>
-        <a href="jadwal.php" class="btn-selengkapnya">
+        <p id="tanggal-masehi">Memuat tanggal...</p>
+
+        
+        <table class="jadwal-table">
+            <thead>
+                <tr>
+                    <th>Imsak</th>
+                    <th>Subuh</th>
+                    <th>Terbit</th>
+                    <th>Dzuhur</th>
+                    <th>Ashar</th>
+                    <th>Maghrib</th>
+                    <th>Isya</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="data-jadwal">
+                    <td colspan="7">Memuat data...</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="<?php echo BASE_URL; ?>/view/pages/jadwal.php" class="btn-selengkapnya">
             <i class="fas fa-calendar-alt"></i> Lihat Jadwal Selengkapnya
-        </a>
+        </a>     
     </section>
 
     <section class="home-section">
@@ -54,7 +72,7 @@ $saldo_akhir       = isset($saldo_akhir) ? $saldo_akhir : 0;
             </div>
         </div>
 
-        <a href="view/pages/keuangan.php" class="btn-selengkapnya">
+        <a href="<?php echo BASE_URL; ?>/view/pages/keuangan.php" class="btn-selengkapnya">
             <i class="fas fa-wallet"></i> Detail Laporan Keuangan
         </a>
     </section>

@@ -1,5 +1,5 @@
 <?php
-// view/pages/keuangan_form.php
+require_once '../../connector/koneksi.php';
 require_once '../layout/header.php';
 require_once '../../models/keuangan_proses.php';
 
