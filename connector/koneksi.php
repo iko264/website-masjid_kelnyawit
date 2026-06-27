@@ -2,11 +2,11 @@
 define('DB_HOST', 'localhost');    
 define('DB_NAME', 'masjid_hamzah'); 
 define('DB_USER', 'root');          
-define('DB_PASS', '');              
+define('DB_PASS', ''); // Dikosongkan atau diisi sesuai password MySQL Anda
 define('DB_CHARSET', 'utf8mb4');    
 
+// Hapus bagian port=3307 agar otomatis menggunakan default 3306
 $dsn = "mysql:host=" . DB_HOST . 
-        ";port=3307" .
        ";dbname=" . DB_NAME . 
        ";charset=" . DB_CHARSET;
 
@@ -27,4 +27,4 @@ try {
          </div>");
 }
 
-define('BASE_URL', 'http://website-masjid_kelnyawit.test/');
+define('BASE_URL', 'http://website-masjid_kelnyawit.test');
