@@ -41,7 +41,7 @@ $halaman_aktif = basename($_SERVER['PHP_SELF']);
                     <li class="navbar__item"><a href="<?php echo BASE_URL; ?>/view/pages/keuangan.php" class="navbar__link <?php echo ($halaman_aktif == 'keuangan.php') ? 'navbar__link--active' : ''; ?>">Keuangan</a></li>
                     <li class="navbar__item"><a href="<?php echo BASE_URL; ?>/view/pages/amal_sedekah.php" class="navbar__link <?php echo ($halaman_aktif == 'amal_sedekah.php') ? 'navbar__link--active' : ''; ?>">Amal Online</a></li>
                     <?php if (isset($_SESSION['is_admin'])): ?>
-                    <li class="navbar__item"><a href="<?php echo BASE_URL; ?>/models/login.php?action=logout" class="navbar__link " onclick="return confirm('Yakin ingin keluar?');">Logout</a></li>
+                    <li class="navbar__item"><a href="<?php echo BASE_URL; ?>/auth/logout.php" class="navbar__link " onclick="return confirm('Yakin ingin keluar?');">Logout</a></li>
                     <?php else: ?>
                     <li class="navbar__item"><a href="<?php echo BASE_URL; ?>/auth/login.php" class="navbar__link" >Login</a></li>
                     <?php endif; ?>

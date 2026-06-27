@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // 2. PROSES LOGOUT (GET)
 if (isset($_GET['action']) && $_GET['action'] === 'logout') {
     session_destroy(); // Hancurkan semua sesi
-    echo "<script>alert('Anda telah berhasil logout.'); window.location.href='/WEBSITE-MASJID_KELNYAWIT/index.php';</script>";
+    echo "<script>alert('Anda telah berhasil logout.'); window.location.href='" . BASE_URL . "';</script>";
     exit;
 }
 ?>
