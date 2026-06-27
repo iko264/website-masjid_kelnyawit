@@ -82,7 +82,7 @@ $saldo_akhir       = isset($saldo_akhir) ? $saldo_akhir : 0;
         <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;">Kunjungi Masjid Hamzah Kelnyawit secara langsung melalui panduan peta digital di bawah ini:</p>
         
         <div style="margin-top: 1rem;">
-            <a href="https://share.google/awr5EuYzy0eU7ACy0" target="_blank" class="map-box" style="text-decoration: none; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            <a href="https://maps.app.goo.gl/FjpLGkTGeCTbFuoj8" target="_blank" class="map-box" style="text-decoration: none; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                 <span style="font-size: 2rem; color: #ff4757;"><i class="fas fa-map-marked-alt"></i></span>
                 <div style="text-align: left;">
                     <div style="font-size: 1.1rem; color: #2B4141;">Buka di Google Maps</div>
