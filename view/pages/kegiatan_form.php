@@ -3,15 +3,31 @@ require_once '../../connector/koneksi.php';
 require_once '../layout/header.php';
 require_once '../../models/kegiatan.php'; 
 
-$is_edit          = isset($_GET['id']) && !empty($_GET['id']);
-$nama_kegiatan    = isset($nama_kegiatan) ? $nama_kegiatan : '';
-$deskripsi        = isset($deskripsi) ? $deskripsi : '';
-$tanggal          = isset($tanggal) ? $tanggal : '';
-$dokumentasi_lama = isset($dokumentasi_lama) ? $dokumentasi_lama : ''; // Ubah dari gambar_lama jadi dokumentasi_lama
+$is_edit = false;
+$nama_kegiatan = '';
+$deskripsi = '';
+$tanggal = '';
+$dokumentasi_lama = '';
+
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $is_edit = true;
+    $id = $_GET['id'];
+    $data = getKegiatanById($id, $pdo);
+    
+    if ($data) {
+        $nama_kegiatan = $data['nama_kegiatan'];
+        $deskripsi     = $data['deskripsi'];
+        $tanggal       = $data['tanggal'];
+        $dokumentasi_lama = $data['dokumentasi'];
+    }
+}
 ?>
 
 <main class="form-wrapper">
     <form action="" method="POST" enctype="multipart/form-data" class="glass-form" style="max-width: 600px;">
+        <?php if($is_edit): ?>
+            <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+        <?php endif; ?> 
         <div class="form-header">
             <h2><?php echo $is_edit ? 'Edit Kegiatan' : 'Tambah Kegiatan Baru'; ?></h2>
         </div>
