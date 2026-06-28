@@ -1,6 +1,3 @@
-// ========================================
-// 1. Fungsi Navbar Toggle (Glassmorphism)
-// ========================================
 document.addEventListener('DOMContentLoaded', function () {
     const navbarToggle = document.getElementById('navbarToggle');
     const navbarMenu = document.getElementById('navbarMenu');
@@ -17,12 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// ========================================
-// 2. Fungsi Jadwal Sholat API Kemenag
-// ========================================
+
 async function getJadwalSholat() {
-    // PENJAGA: Cek apakah ada elemen tabel di halaman ini.
-    // Jika tidak ada (misal di halaman Home), hentikan fungsi agar tidak error.
     const elementTanggal = document.getElementById('tanggal-masehi');
     const elementTabel = document.getElementById('data-jadwal');
     

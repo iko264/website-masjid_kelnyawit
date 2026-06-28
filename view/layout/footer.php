@@ -11,24 +11,25 @@
         <div class="footer__col">
             <h3 class="footer__title">Tautan Pintas</h3>
             <ul class="footer__links">
-                <li><a href="index.php" class="footer__link">Beranda</a></li>
-                <li><a href="profil.php" class="footer__link">Profil Masjid</a></li>
-                <li><a href="kegiatan.php" class="footer__link">Kegiatan</a></li>
-                <li><a href="jadwal-sholat.php" class="footer__link">Jadwal Sholat</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/index.php" class="footer__link">Beranda</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/view/pages/profil.php" class="footer__link">Profil Masjid</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/view/pages/keuangan.php" class="footer__link">Keuangan</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/view/pages/kegiatan.php" class="footer__link">Kegiatan</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/view/pages/jadwal.php" class="footer__link">Jadwal Sholat</a></li>
             </ul>
-        </div>
+        </div>  
 
         <div class="footer__col">
             <h3 class="footer__title">Kontak Kami</h3>
             <ul class="footer__links">
-                <li><a href="../pages/contact.php" class="footer__link">Contact us</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/view/pages/contact.php" class="footer__link">Contact us</a></li>
                 <li>email: <a href="mailto:masjidhamzahbinabdulM@gmail.com" class="footer__link">masjidhamzahbinabdulM@gmail.com</a></li>
             </ul>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
 

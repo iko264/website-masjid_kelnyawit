@@ -29,7 +29,7 @@ $saldo_akhir       = isset($saldo_akhir) ? $saldo_akhir : 0;
         </p>
         <p id="tanggal-masehi">Memuat tanggal...</p>
 
-        
+        <div class="table-container-jadwal">
         <table class="jadwal-table">
             <thead>
                 <tr>
@@ -48,6 +48,7 @@ $saldo_akhir       = isset($saldo_akhir) ? $saldo_akhir : 0;
                 </tr>
             </tbody>
         </table>
+        </div>
         <a href="<?php echo BASE_URL; ?>/view/pages/jadwal.php" class="btn-selengkapnya">
             <i class="fas fa-calendar-alt"></i> Lihat Jadwal Selengkapnya
         </a>     
