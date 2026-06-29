@@ -197,7 +197,7 @@ require_once '../../models/jadwal.php';
     <p>Daftar penceramah sholat Jumat untuk beberapa pekan ke depan.</p>
     <?php if (isset($_SESSION['is_admin'])): ?>
     <div style="max-width: 1200px; margin: 0 auto 1em auto; text-align: center  ;">
-        <a href="khatib_form.php" class="btn-tambah">
+        <a href="jadwal_khatib_edit.php" class="btn-tambah">
             <i class="fas fa-plus-circle"></i> Tambah Khatib Baru
         </a>
     </div>
